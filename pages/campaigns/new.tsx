@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button, Input, Message } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Layout from '../../components/Layout';
 import factory from '../../ethereum/factory';
 import web3 from '../../ethereum/web3';
@@ -29,6 +30,9 @@ const CampaignNew = () => {
   };
   return (
     <Layout>
+      <Head>
+        <title>New Campaign</title>
+      </Head>
       <Form onSubmit={onSubmit} error={Boolean(errorMessage)}>
         <div
           style={{

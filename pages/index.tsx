@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, CardGroup } from 'semantic-ui-react';
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 import factory from '../ethereum/factory';
 import Layout from '../components/Layout';
 import Link from 'next/link';
@@ -12,6 +13,9 @@ interface Props {
 const Index: React.FC<Props> = ({ campaigns }) => {
   return (
     <Layout>
+      <Head>
+        <title>Open Campaigns</title>
+      </Head>
       <h3>Open Campaigns</h3>
       <Link href='/campaigns/new'>
         <Button

@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button, Message, Input, TextArea } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Head from 'next/head';
 import Layout from '../../../../components/Layout';
 import web3 from '../../../../ethereum/web3';
 import getCampaign from '../../../../ethereum/campaign';
@@ -46,6 +47,9 @@ const NewRequest: React.FC = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>New Request</title>
+      </Head>
       <Link href={`/campaigns/${address}`}>Back</Link>
 
       <Form error={Boolean(error)} onSubmit={onSubmit}>

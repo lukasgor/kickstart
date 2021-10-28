@@ -80,6 +80,7 @@ const RequestRow: React.FC<Props> = ({
       <Cell>
         {request.approvalCount}/{approversCount}
       </Cell>
+      <Cell>{request.complete ? 'Completed' : 'Pending'}</Cell>
       <Cell>
         {!request.complete && (
           <Button

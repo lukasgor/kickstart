@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Grid, Button } from 'semantic-ui-react';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
+import Head from 'next/head';
 import ContributeForm from '../../../components/ContributeForm';
 import web3 from '../../../ethereum/web3';
 import Layout from '../../../components/Layout';
@@ -64,6 +65,9 @@ const CampaignShow: React.FC<Props> = ({
 
   return (
     <Layout>
+      <Head>
+        <title>Campaign Details</title>
+      </Head>
       <h3>Campaign Details</h3>
       <Grid>
         <Grid.Row>

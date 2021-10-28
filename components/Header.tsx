@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const Header = () => {
   const { pathname } = useRouter();
   return (
-    <Menu pointing secondary>
+    <Menu size='huge' pointing secondary>
       <Link href='/'>
         <Menu.Item active={pathname === '/'}>Campaigns</Menu.Item>
       </Link>

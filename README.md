@@ -3,15 +3,24 @@
 ## Getting started
 
 Kickstart is a kickstarter-like application but build on Ethereum. 
-It enables you to create campaigns and attract contributors, but unlike a real kick-starter the money(eth) is stored on a smart contract and you need to get at least 50% contributors approvals for any spending (so campaign manager is not able to just run away with cash).
+It enables you to create campaigns and gather contributors, but unlike a real kick-starter the money(eth) is stored on a smart contract and you need to get at least 50% contributors approvals for any spending (so campaign manager is not able to just run away with money). 
+You need to have a [metamask](https://metamask.io/) installed in order to interact with the app.
 
-### Installation
+### Installation & running locally
 
-To install all dependencies and link internal packages, run this command from anywhere in the repo:
+Install all dependencies:
 
 ```sh
 yarn install
 ```
+
+Run the app locally:
+
+```sh
+yarn dev
+```
+
+By default app is connected to Ropsten test network, if you want to run the app in production environment, check the deployment section.
 
 ## Contributing
 
@@ -44,9 +53,10 @@ yarn test --watch
 We use [conventional commits](https://www.conventionalcommits.org) to keep our commits readable, but
 also to automatically handle our release flow and generate changelogs in the future.
 
-## CI and deployment
+## Deployment
 
-TBD
+If you want to deploy the contracts to other networks, create a `.env` file based on `.env.example` in the root of the project. Next you need to fill `DEPLOY_ACC_MNEMONIC` and `RPC_URL` and run `yarn compile:contracts && yarn deploy:contracts`. After that copy the campaign factory address outputted after deployment and paste it to `FACTORY_ADDRESS` in `.env` file. 
+
 
 ### Pushing to a branch
 

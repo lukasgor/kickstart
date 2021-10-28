@@ -61,6 +61,10 @@ const NewRequest: React.FC = () => {
             alignItems: 'center',
           }}
         >
+          <Message visible>
+            Requests can only be created by a campaign manager, otherwise the
+            transaction will fail.
+          </Message>
           <h3>New Request</h3>
           <Form.Field>
             <label htmlFor='description'>Description</label>

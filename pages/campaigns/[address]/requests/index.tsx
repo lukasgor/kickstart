@@ -14,7 +14,7 @@ interface Props {
   requests: Request[];
 }
 
-const Requests: React.FC<Props> = ({ requests, address, approversCount }) => {
+const Requests = ({ requests, address, approversCount }: Props) => {
   const { Header, Row, HeaderCell, Body } = Table;
   const [error, setError] = React.useState<null | string>(null);
   return (

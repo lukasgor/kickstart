@@ -8,7 +8,7 @@ type Props = {
   campaignAddress: string;
 };
 
-const ContributeForm: React.FC<Props> = ({ campaignAddress }) => {
+const ContributeForm = ({ campaignAddress }: Props) => {
   const [contributeAmount, setContributeAmount] = React.useState('');
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);

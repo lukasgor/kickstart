@@ -7,7 +7,7 @@ import Layout from '../../../../components/Layout';
 import web3 from '../../../../ethereum/web3';
 import getCampaign from '../../../../ethereum/campaign';
 
-const NewRequest: React.FC = () => {
+const NewRequest = () => {
   const {
     query: { address },
     push,

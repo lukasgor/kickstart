@@ -10,7 +10,7 @@ interface Props {
   campaigns: string[];
 }
 
-const Index: React.FC<Props> = ({ campaigns }) => {
+const Index = ({ campaigns }: Props) => {
   return (
     <Layout>
       <Head>

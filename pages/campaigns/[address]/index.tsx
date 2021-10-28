@@ -17,14 +17,14 @@ interface Props {
   campaignAddress: string;
 }
 
-const CampaignShow: React.FC<Props> = ({
+const CampaignShow = ({
   balance,
   manager,
   minimumContribution,
   requestsCount,
   approversCount,
   campaignAddress,
-}) => {
+}: Props) => {
   const items = React.useMemo(
     () => [
       {

@@ -45,11 +45,14 @@ const CampaignNew = () => {
         >
           <Form.Field>
             <h3 style={{ textAlign: 'center' }}>Create a Campaign</h3>
-            <label>Minimum value required to become a contributor</label>
+            <label htmlFor='min-contribution'>
+              Minimum value required to become a contributor
+            </label>
             <Input
               value={minimumContribution}
               onChange={(e) => setMinimumContribution(e.target.value)}
               label='wei'
+              id='min-contribution'
               labelPosition='right'
             />
           </Form.Field>

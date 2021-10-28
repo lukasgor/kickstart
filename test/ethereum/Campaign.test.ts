@@ -1,10 +1,10 @@
-const assert = require('assert');
-const ganache = require('ganache-cli');
-const Web3 = require('web3');
-const web3 = new Web3(ganache.provider());
+import assert from 'assert';
+import ganache from 'ganache-cli';
+import Web3 from 'web3';
+import compiledFactory from '../../ethereum/build/CampaignFactory.json';
+import compiledCampaign from '../../ethereum/build/Campaign.json';
 
-const compiledFactory = require('../ethereum/build/CampaignFactory.json');
-const compiledCampaign = require('../ethereum/build/Campaign.json');
+const web3 = new Web3(ganache.provider());
 
 let accounts;
 let factory;
@@ -20,7 +20,7 @@ beforeEach(async () => {
     })
     .send({
       from: accounts[0],
-      gas: '1000000',
+      gas: 1000000,
     });
 
   await factory.methods.createCampaign('100').send({

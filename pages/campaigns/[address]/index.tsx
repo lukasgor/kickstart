@@ -89,7 +89,7 @@ const CampaignShow: React.FC<Props> = ({
 export const getServerSideProps: GetServerSideProps = async ({
   query: { address },
 }) => {
-  const campaign = Campaign(address);
+  const campaign = Campaign(address as string);
   const summary = await campaign.methods.getSummary().call();
 
   return {

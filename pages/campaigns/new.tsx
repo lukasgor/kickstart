@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button, Input, Message, Container } from 'semantic-ui-react';
+import { Form, Button, Input, Message } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import factory from '../../ethereum/factory';

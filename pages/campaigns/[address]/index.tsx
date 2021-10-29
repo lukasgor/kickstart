@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Card } from 'semantic-ui-react';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -25,44 +25,6 @@ const CampaignShow = ({
   approversCount,
   campaignAddress,
 }: Props) => {
-  const items = React.useMemo(
-    () => [
-      {
-        header: manager,
-        meta: 'Address of manager',
-        description:
-          'The manager created this campaign and can create requests to withdraw money.',
-        style: {
-          overflowWrap: 'break-word',
-        },
-      },
-      {
-        header: minimumContribution,
-        meta: 'Minimum Contribution (wei)',
-        description:
-          'You need to contribute at least this much wei to become a contributor.',
-      },
-      {
-        header: requestsCount,
-        meta: 'Number of Requests',
-        description:
-          'A request tries to withdraw money from the contract. Requests must be approved by contributors.',
-      },
-      {
-        header: approversCount,
-        meta: 'Number of Contributors',
-        description:
-          'Number of people who have already donated to this campaign.',
-      },
-      {
-        header: web3.utils.fromWei(balance, 'ether'),
-        meta: 'Campaign Balance (ether)',
-        description: 'How much money this campaign has left to spend.',
-      },
-    ],
-    [manager, minimumContribution, requestsCount, approversCount, balance],
-  );
-
   return (
     <Layout>
       <Head>
@@ -72,7 +34,47 @@ const CampaignShow = ({
       <Grid>
         <Grid.Row>
           <Grid.Column width={10}>
-            <Card.Group items={items} />
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'auto auto',
+                gridColumnGap: '12px',
+              }}
+            >
+              <Card
+                header={manager}
+                meta='Address of manager'
+                description='The manager created this campaign and can create requests to withdraw money.'
+                fluid
+                style={{
+                  gridColumn: '1 / -1',
+                }}
+              />
+              <Card
+                fluid
+                header={minimumContribution}
+                meta='Minimum Contribution (wei)'
+                description='You need to contribute at least this much wei to become a contributor.'
+              />
+              <Card
+                fluid
+                header={requestsCount}
+                meta='Number of Requests'
+                description='A request tries to withdraw money from the contract. Requests must be approved by contributors.'
+              />
+              <Card
+                fluid
+                header={approversCount}
+                meta='Number of Contributors'
+                description='Number of people who have already donated to this campaign.'
+              />
+              <Card
+                fluid
+                header={web3.utils.fromWei(balance, 'ether')}
+                meta='Campaign Balance (ether)'
+                description='How much money this campaign has left to spend.'
+              />
+            </div>
           </Grid.Column>
           <Grid.Column width={6}>
             <ContributeForm campaignAddress={campaignAddress} />

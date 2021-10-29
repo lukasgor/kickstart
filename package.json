@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
     "compile:contracts": "ts-node  -O '{\"module\":\"commonjs\"}' ethereum/compile.ts",
     "deploy:contracts": "ts-node  -O '{\"module\":\"commonjs\"}' ethereum/deploy.ts",

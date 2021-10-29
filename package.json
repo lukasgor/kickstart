@@ -3,15 +3,24 @@
   "version": "1.0.0",
   "description": "A kickstarter clone built on Ethereum",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
     "compile:contracts": "ts-node  -O '{\"module\":\"commonjs\"}' ethereum/compile.ts",
     "deploy:contracts": "ts-node  -O '{\"module\":\"commonjs\"}' ethereum/deploy.ts",
-    "dev": "next dev"
+    "dev": "next dev",
+    "postinstall": "husky install",
+    "prepare": "husky install"
   },
   "author": "lukasgor",
   "license": "ISC",
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix --max-warnings=0"
+    ]
+  },
   "dependencies": {
     "dotenv": "^10.0.0",
     "next": "^11.1.2",
@@ -39,6 +48,10 @@
     "solc": "^0.4.17",
     "truffle-hdwallet-provider": "^0.0.3",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "@commitlint/cli": "13.2.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "lint-staged": "11.1.2",
+    "husky": "^7.0.0"
   }
 }

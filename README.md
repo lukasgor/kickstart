@@ -21,7 +21,7 @@ Run the app locally:
 yarn dev
 ```
 
-By default app is connected to Ropsten test network, if you want to run the app in production environment, check the deployment section.
+By default app is connected to Ropsten test network, if you want to run the app in other environment, check the deployment section.
 
 ## Contributing
 
@@ -66,6 +66,7 @@ The following happens when a commit is pushed to a branch other than master:
 1.  Dependencies are installed.
 1.  Linter is run.
 1.  All tests are run.
+1.  Branch version of the app is deployed via Vercel
 
 ### Pushing/merging to master
 

@@ -7,7 +7,21 @@ It enables you to create campaigns and gather contributors, but unlike a real ki
 You need to have a [metamask](https://metamask.io/) installed in order to interact with the app.
 Test version running on ropsten network: https://kickstart-kappa.vercel.app/
 
+### What is missing / could be done better
+
+Missing/TBD features:
+
+1.  Automatic versioning based on git commit history with tools like semantic-release
+1.  Add more restrictions for branches, for instance restrict pushing directly to master / prevent merging when tests fail / don't run deploys for `chore` commits etc.
+1.  Add E2E tests for the whole app with tools like Cypress because I feel like writing integration/unit tests for react components in Nextjs doesn't provide much value(it's hard to simulate server-rendered components in JSDOM).
+1.  UI problems: 
+  - the app now is only understandable for Ethereum users
+  - Some of the actions could be hidden depending on user's address
+  - The app doesn't look great, it's mainly focused on functionalites and good contracts rather than UI/UX
+
 ### Installation & running locally
+
+It's recommended to use node v14.17.0, if you'r a [nvm](https://github.com/nvm-sh/nvm) user, simply run `nvm use` inside the project.
 
 Install all dependencies:
 
@@ -21,7 +35,7 @@ Run the app locally:
 yarn dev
 ```
 
-By default app is connected to Ropsten test network, if you want to run the app in other environment, check the deployment section.
+By default the app is connected to Ropsten test network, if you want to run the app in other environment, check the deployment section.
 
 ## Contributing
 
